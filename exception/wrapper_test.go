@@ -56,6 +56,16 @@ func TestNewFieldRange(t *testing.T) {
 	}
 }
 
+func TestNewNetworkCall(t *testing.T) {
+	err := NewNetworkCall("cassandra", "192.168.1.64:9042")
+	t.Log(GetDescription(err))
+
+	msg := "remote call to cassandra with address 192.168.1.64:9042 has failed"
+	if GetDescription(err) != msg {
+		t.Fatalf("invalid error description, expected '%s'", msg)
+	}
+}
+
 func TestWrapCustomError(t *testing.T) {
 	domainErr := errors.New("custom error")
 	err := WrapCustomError(domainErr, "error description with field %v", "foo")

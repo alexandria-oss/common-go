@@ -14,6 +14,8 @@ var FieldFormat = errors.New("field has an invalid format")
 var FieldRange = errors.New("field has an invalid range")
 // Invalid Aggregate/Entity/... is invalid
 var Invalid = errors.New("invalid field")
+// NetworkCall  Network call has failed
+var NetworkCall = errors.New("network call has failed")
 
 /* Description(s) */
 
@@ -22,3 +24,4 @@ var NotFoundDescription = "%v not found"
 var RequiredFieldDescription = "missing required field: %v"
 var FieldFormatDescription = "field %v has an invalid format, expected %v"
 var FieldRangeDescription = "field %v is out of range [%v, %v)"
+var NetworkCallDescription = "remote call to %v with address %v has failed"

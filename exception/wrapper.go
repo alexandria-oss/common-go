@@ -62,6 +62,17 @@ func NewFieldRange(field, x, y string) error {
 	return fmt.Errorf(format, FieldRange, fmt.Sprintf(FieldRangeDescription, field, x, y))
 }
 
+// NewNetworkCall Create and wrap an NetworkCall exception
+//
+// Usage
+//
+// err := NewNetworkCall("cassandra", "192.168.1.64:9042") -> "network call has failed#remote call to cassandra with address 192.168.1.64:9042 has failed"
+//
+// GetDescription(err) -> "remote call to cassandra with address 192.168.1.64:9042 has failed"
+func NewNetworkCall(resource, addr string) error {
+	return fmt.Errorf(format, NetworkCall, fmt.Sprintf(NetworkCallDescription, resource, addr))
+}
+
 // WrapCustomError Wrap a custom domain error with a description
 //
 // Usage
