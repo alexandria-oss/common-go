@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-// GetStatusFromError Get an HTTP status from a custom error
+// GetStatusFromError Get an HTTP status from a domain or custom error
 func GetStatusFromError(err error) int {
 	switch {
 	case errors.Is(err, exception.AlreadyExists):
